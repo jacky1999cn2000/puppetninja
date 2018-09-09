@@ -1,5 +1,6 @@
 'use strict';
 
+const like4likeTwitter = require('../services/like4likeTwitter');
 const utils = require('../services/utils');
 const manager = require('../services/manager');
 
@@ -16,12 +17,12 @@ module.exports = {
     }
 
     // earn points
-    await youlikehitsTwitter.follow(page, browser, config);
-    await youlikehitsTwitter.like(page, browser, config);
-    await youlikehitsTwitter.retweet(page, browser, config);
-
-    config['youlikehits_user' + config.whichyoulikehitsuser].twitter_operation_done = true;
-    manager.save(config);
+    // await like4likeTwitter.follow(page, browser, config);
+    await like4likeTwitter.like(page, browser, config);
+    // await youlikehitsTwitter.retweet(page, browser, config);
+    //
+    // config['youlikehits_user' + config.whichyoulikehitsuser].twitter_operation_done = true;
+    // manager.save(config);
 
   }
 

@@ -84,7 +84,7 @@ module.exports = {
       await page.waitFor(5000);
 
       // delete followers
-      await page.goto(config.twitter_url + config['youlikehits_user' + config.whichyoulikehitsuser]['twitter_handle' + config['youlikehits_user' + config.whichyoulikehitsuser].whichtwitteruser] + '/following', {
+      await page.goto(config.twitter_url + config['twitter_users']['twitter_handle' + config['twitter_users'].whichtwitteruser] + '/following', {
         waituntil: "networkidle0"
       });
       await page.waitFor(2000);

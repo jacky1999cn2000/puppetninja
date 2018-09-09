@@ -1,5 +1,6 @@
 'use strict';
 
+const like4like = require('../services/like4like');
 const twitter = require('../services/twitter');
 const funtweets = require('../services/funtweets');
 const utils = require('../services/utils');
@@ -28,8 +29,7 @@ module.exports = {
 
     // if account is blocked, don't need to proceed
     if (healthy) {
-      await youlikehits.login(page, browser, config);
-      await youlikehits.addTwitterUser(page, browser, config);
+      await like4like.login(page, browser, config);
     }
 
   },
